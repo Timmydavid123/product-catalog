@@ -1,38 +1,127 @@
+body {
+  background-color: #ffffff; /* White background color */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Consistent font across the app */
+}
+
 .App {
-  text-align: center;
+  margin: 20px;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.product-table-container {
+  margin-top: 20px;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px; /* Rounded corners for the table */
+  overflow: hidden; /* Ensure rounded corners apply */
+  background-color: #ffffff; /* White background for the table */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.product-table-headers {
+  background-color: #e0e4f7; /* Different background color for the header */
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.product-header {
+  padding: 12px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.product-table th, .product-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 12px;
+  text-align: left; /* Ensure consistent text alignment */
+}
+
+.product-table img {
+  width: 50px;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.App-link {
-  color: #61dafb;
+.header-logo img {
+  height: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-search input {
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.header-profile {
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.notification-dropdown,
+.profile-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  z-index: 10;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f7fc;
+}
+
+.arrow-down {
+  margin-left: 5px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 2px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.arrow-down.open {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
 }

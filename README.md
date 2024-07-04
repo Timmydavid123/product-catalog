@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+This project was built using React. It includes a header with a search bar, notification icon, profile dropdown, and a product table to display product details.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project Structure
+The project consists of the following key components:
 
-## Available Scripts
+1. Header
+The Header component is responsible for rendering the top section of the dashboard. It includes the following features:
+
+A logo
+A search bar with a loading indicator and search icon
+A notification icon with a dropdown for recent activities
+A profile section with a dropdown for profile options
+File: src/components/Header.js
+
+Functionality:
+Search Bar: Utilizes a debounced input to manage the search term, reducing the number of updates and avoiding unnecessary rendering.
+Profile Dropdown: Allows toggling of profile-related options such as viewing the profile, settings, and logout.
+Notification Dropdown: Shows recent activities.
+2. Product Table
+The ProductTable component is responsible for displaying a table of products. It filters the products based on the search term provided by the user.
+
+File: src/components/ProductTable.js
+
+Functionality:
+Product Filtering: Filters the products array to match the search term.
+Table Rendering: Displays the filtered products in a table format with various columns like S/N, Image, SKU, Name, Title, Description, Brand, Cost Price, Quantity, and Size.
+3. Product Row
+The ProductRow component is responsible for rendering individual rows in the product table.
+
+File: src/components/ProductRow.js
+
+Functionality:
+Row Rendering: Renders each product with its details including an image, which defaults to a placeholder if the image fails to load.
+4. Product Context
+The ProductContext and ProductProvider are used to manage and provide product data throughout the application using React's Context API.
+
+File: src/context/ProductContext.js
+
+Functionality:
+Data Fetching: Fetches product data from an external API and makes it available to other components.
+State Management: Uses React state to manage the list of products and provides this state to components via the context.
+5. Home Page
+The HomePage component integrates the Header and ProductTable components, managing the overall layout and flow of data.
+
+File: src/HomePage.js
+
+Functionality:
+State Management: Manages the search term state and passes it down to the Header and ProductTable components.
+Layout: Arranges the Header and ProductTable components on the page.
+Styling
+The application is styled using CSS. Key styles include:
+
+General Styles: Global styles for body, font, and layout.
+Header Styles: Styles for the header component, including logo, search bar, notification icon, and profile dropdown.
+Table Styles: Styles for the product table and individual rows, including hover effects and responsive design considerations.
+File: src/components/Header.css
+
+How to Run the Project
+Clone the repository:
+bash
+Copy code
+git clone https://github.com/your-repo/product-management-dashboard.git
+cd product-management-dashboard
+Install dependencies:
+
+bash
+Copy code
+npm install
+Run the development server:
+
+bash
+Copy code
+npm start
+Open the application:
+
+The application should be running on http://localhost:3000.
+Dependencies
+React: A JavaScript library for building user interfaces.
+React Context API: For state management.
+CSS: For styling the components.
+API
+The application fetches product data from an external API:
+
+Endpoint: http://3.88.1.181:8000/products/public/catalog?supplier=FragranceNet
+Contribution
+Feel free to fork the repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
+
+License
+This project is licensed under the MIT License.
+
+This README.md provides a detailed overview of the project, including the structure, functionality, and instructions on how to set up and run the application.
+
 
 In the project directory, you can run:
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

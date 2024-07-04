@@ -1,0 +1,115 @@
+/* src/components/Header.css */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header-logo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.header-logo img {
+  height: 50px;
+}
+
+.header-search {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.header-search input {
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  width: 300px;
+  background-color: #f0f7fc;
+}
+
+.header-profile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-profile .header-icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 10px;
+}
+
+.header-profile .profile-dropdown,
+.header-profile .notification-dropdown {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.header-profile .arrow-down {
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-left: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.header-profile .arrow-down.open {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1000;
+  width: auto;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f7fc;
+}
+
+.header-search {
+  position: relative;
+}
+
+.loader {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
